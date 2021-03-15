@@ -1,0 +1,9 @@
+venv
+.vscode
+__pycache__/
+dist/
+.tox
+.coverage
+.cache
+coverage.xml
+db.sqlite3
