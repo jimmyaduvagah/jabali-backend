@@ -16,7 +16,7 @@ class User(PermissionsMixin, AbstractBaseUser):
     # users can change email, preferred names, DB ids, business partners e.t.c
     # unique to user across the whole distributed system
     guid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    phone_number = models.CharField(max_length=32, null=True, blank=True, unique=True)
+    phone_number = models.CharField(max_length=32, unique=True)
     id_number = models.CharField(max_length=32, null=True, blank=True, unique=True)
 
 

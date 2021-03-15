@@ -1,6 +1,5 @@
 import uuid
 import logging
-
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.validators import validate_email
@@ -14,13 +13,10 @@ from django.utils import timezone
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, first_name, last_name,
+    def create_user(self, phone_number, first_name, last_name,
                     password=None, **extra_fields):
         now = timezone.now()
-        if not email:
-            raise ValueError('The email must be set')
 
-        email = UserManager.normalize_email(email)
         is_staff = extra_fields.pop('is_staff', False)
         is_active = extra_fields.pop('is_active', True)
         is_superuser = extra_fields.pop('is_superuser', False)
@@ -29,9 +25,8 @@ class UserManager(BaseUserManager):
         other_names = extra_fields.pop('other_names', None)
         last_password_change = extra_fields.pop('last_password_change', now)
 
-        validate_email(email)
         user = self.model(
-            email=email, first_name=first_name,
+            phone_number=phone_number, first_name=first_name,
             last_name=last_name, other_names=other_names,
             is_staff=is_staff, is_active=is_active, is_superuser=is_superuser,
             last_login=last_login, date_joined=date_joined,
@@ -45,9 +40,9 @@ class UserManager(BaseUserManager):
 
         return user
 
-    def create_superuser(self, email, first_name, last_name,
+    def create_superuser(self, phone_number, first_name, last_name,
                          password, **extra_fields):
-        user = self.create_user(email, first_name, last_name,
+        user = self.create_user(phone_number, first_name, last_name,
                                 password, **extra_fields)
         user.is_staff = True
         user.is_active = True
