@@ -13,9 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from rest_framework import routers
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from grades.views import GradeClassViewSet, GradeScoreViewSet, GradeSubjectViewSet
+from users.views import UserViewSet
+from teachers.views import TeacherViewSet
+from students.views import StudentViewSet
+
+router = routers.SimpleRouter()
+
+router.register(r'accounts', UserViewSet)
+router.register(r'students', StudentViewSet)
+router.register(r'tutors', TeacherViewSet)
+router.register(r'subjects', GradeSubjectViewSet)
+router.register(r'class', GradeClassViewSet)
+router.register(r'grading', GradeScoreViewSet)
