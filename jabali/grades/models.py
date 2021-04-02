@@ -1,6 +1,6 @@
 from django.db import models
-from common.models import AbstractBase
-from students.models import Student
+from jabali.common.models import AbstractBase
+from jabali.students.models import Student
 
 
 class GradeClass(AbstractBase):

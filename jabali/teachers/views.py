@@ -1,5 +1,6 @@
 from rest_framework import viewsets
-from teachers.serializer import TeacherSerializer, Teacher
+from jabali.teachers.serializer import TeacherSerializer, Teacher
+
 
 class TeacherViewSet(viewsets.ModelViewSet):
     """

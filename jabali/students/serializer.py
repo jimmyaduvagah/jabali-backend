@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 
-from students.models import Student
+from jabali.students.models import Student
+
 
 class StudentSerializer(ModelSerializer):
     class Meta:

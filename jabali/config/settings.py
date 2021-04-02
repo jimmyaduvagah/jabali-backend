@@ -32,7 +32,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
-
 AUTH_USER_MODEL = 'users.User'
 
 # Application definition
@@ -48,11 +47,11 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
 
-    'users',
-    'students',
-    'teachers',
-    'grades',
-    
+    'jabali.users',
+    'jabali.students',
+    'jabali.teachers',
+    'jabali.grades',
+
 ]
 
 MIDDLEWARE = [
@@ -66,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'jabali.config.urls'
 
 TEMPLATES = [
     {
@@ -84,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'jabali.config.wsgi.application'
 
 
 # Database

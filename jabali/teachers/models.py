@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
-from common.models import AbstractBase, GENDER_CHOICES
-
+from jabali.common.models import AbstractBase, GENDER_CHOICES
 
 
 class Teacher(AbstractBase):

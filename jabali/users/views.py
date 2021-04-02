@@ -1,5 +1,6 @@
 from rest_framework import viewsets
-from users.serializer import User, UserSerializer
+from jabali.users.serializer import User, UserSerializer
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """

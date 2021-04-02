@@ -1,0 +1,62 @@
+"""Package setup."""
+from setuptools import find_packages, setup
+
+name = 'jabali_sys'
+
+setup(
+    name=name,
+    version='0.0.0.1',
+    packages=find_packages(exclude=['tests', 'tests.*']),
+    description="Jabali System",
+    long_description=open('README.rst').read(),
+    author="ja",
+    author_email="developers@asantesystems.com",
+    license="Proprietary",
+    classifiers=[
+        'Development Status :: 1 - Alpha',
+        'Topic :: Software Development :: Libraries',
+        'Programming Language :: Python :: 3 :: Only',
+    ],
+    install_requires=[
+        'appdirs==1.4.4',
+        'asgiref==3.3.1',
+        'attrs==20.3.0',
+        'backcall==0.2.0',
+        'coverage==5.5',
+        'decorator==4.4.2',
+        'distlib==0.3.1',
+        'Django==3.1.7',
+        'django-cors-headers==3.7.0',
+        'django-filter==2.4.0',
+        'djangorestframework==3.12.2',
+        'filelock==3.0.12',
+        'importlib-metadata==3.7.3',
+        'iniconfig==1.1.1',
+        'ipython==7.21.0',
+        'ipython-genutils==0.2.0',
+        'jedi==0.18.0',
+        'packaging==20.9',
+        'parso==0.8.1',
+        'pexpect==4.8.0',
+        'pickleshare==0.7.5',
+        'pluggy==0.13.1',
+        'prompt-toolkit==3.0.17',
+        'ptyprocess==0.7.0',
+        'py==1.10.0',
+        'Pygments==2.8.1',
+        'pyparsing==2.4.7',
+        'pytest==6.2.2',
+        'pytest-cov==2.11.1',
+        'pytz==2021.1',
+        'six==1.15.0',
+        'sqlparse==0.4.1',
+        'toml==0.10.2',
+        'tox==3.23.0',
+        'traitlets==5.0.5',
+        'typing-extensions==3.7.4.3',
+        'virtualenv==20.4.2',
+        'wcwidth==0.2.5',
+        'zipp==3.4.1'
+    ],
+    include_package_data=True
+)

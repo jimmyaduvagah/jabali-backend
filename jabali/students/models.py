@@ -1,5 +1,5 @@
 from django.db import models
-from common.models import AbstractBase, GENDER_CHOICES
+from jabali.common.models import AbstractBase, GENDER_CHOICES
 
 
 class Student(AbstractBase):
@@ -10,5 +10,3 @@ class Student(AbstractBase):
     gender = models.CharField(null=True, blank=True, choices=GENDER_CHOICES, max_length=2)
     admission_no = models.CharField(max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
-
-

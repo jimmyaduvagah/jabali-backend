@@ -8,6 +8,7 @@ GENDER_CHOICES = (
     ('FM', 'Female')
 )
 
+
 class AbstractBase(models.Model):
     """Base class for all models that belong to a business partner."""
 

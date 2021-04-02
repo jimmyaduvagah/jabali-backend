@@ -2,6 +2,7 @@ from rest_framework.serializers import ModelSerializer
 
 from .models import GradeClass, GradeSubject, GradeScore
 
+
 class GradeClassSerializer(ModelSerializer):
     class Meta:
         model = GradeClass
@@ -18,4 +19,3 @@ class GradeSubjectSerializer(ModelSerializer):
     class Meta:
         model = GradeSubject
         fields = '__all__'
-

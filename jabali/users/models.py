@@ -17,7 +17,6 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         Token.objects.create(user=instance)
 
 
-
 class User(PermissionsMixin, AbstractBaseUser):
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['first_name', 'last_name', ]
@@ -29,7 +28,6 @@ class User(PermissionsMixin, AbstractBaseUser):
     guid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     phone_number = models.CharField(max_length=32, unique=True)
     id_number = models.CharField(max_length=32, null=True, blank=True, unique=True)
-
 
     email = models.EmailField(
         null=True, blank=False, unique=True, validators=[validate_email])

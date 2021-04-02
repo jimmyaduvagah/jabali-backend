@@ -1,14 +1,6 @@
 import uuid
-import logging
-from django.conf import settings
-from django.core.mail import send_mail
-from django.core.validators import validate_email
-from django.contrib.auth import password_validation
 from django.contrib.auth.models import BaseUserManager
-from django.template.loader import get_template
 from django.utils import timezone
-
-
 
 
 class UserManager(BaseUserManager):
@@ -31,7 +23,6 @@ class UserManager(BaseUserManager):
             is_staff=is_staff, is_active=is_active, is_superuser=is_superuser,
             last_login=last_login, date_joined=date_joined,
             last_password_change=last_password_change, **extra_fields)
-        password_validation.validate_password(password, user)
         user.set_password(password)
         if extra_fields.get('guid', None) is None:
             user.guid = uuid.uuid4()

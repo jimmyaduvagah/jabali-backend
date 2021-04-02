@@ -1,9 +1,8 @@
 from rest_framework import viewsets
 
-from rest_framework import viewsets
-
-from grades.serializer import GradeClassSerializer, GradeScoreSerializer, \
+from jabali.grades.serializer import GradeClassSerializer, GradeScoreSerializer, \
     GradeSubjectSerializer, GradeSubject, GradeScore, GradeClass
+
 
 class GradeClassViewSet(viewsets.ModelViewSet):
     """
